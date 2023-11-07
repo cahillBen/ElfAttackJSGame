@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Ben's Game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+        <script src="{{ url_for('static', filename='settings.js') }}" type="module" ></script>
+        <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}"/>
+    </head>
+    <body>
+        
+        <header>
+            <h1>Elf Attack</h1>
+            <nav>
+                <button id="settings"><a href="{{ url_for('settings') }}">Settings</a></button>
+                <button id="home"><a href="{{ url_for('home') }}">Back to Game</a></button>
+            </nav>
+        </header>
+        <main>
+            <h2>Change Controls</h2>
+            <p>
+                Choose your preferred buttons for attacking in the game!
+            </p>
+            <p>
+                Note: Your chosen key should appear in brackets, if not please re-submit
+            </p>
+                
+            <form action="" method="POST">
+                <label for="continueKey">Continue Key</label>
+                <input type="text" name="continueKey" id="continueKey"/>
+                {% if continueKey != None %}({{ continueKey }}){% endif %}
+                <br/>
+                <label for="shootKey">Bow Attack</label>
+                <input type="text" name="shootKey" id="shootKey"/>
+                {% if shootKey != None %}({{ shootKey }}){% endif %}
+                <br/>
+                <label for="hitKey">Sword Attack</label>
+                <input type="text" name="hitKey" id="hitKey"/>
+                {% if hitKey != None %}({{ hitKey }}){% endif %}
+                <br/>
+                <label for="invincibleKey">Invincibility</label>
+                <input type="text" name="invincibleKey" id="invincibleKey"/>
+                {% if invincibleKey != None %}({{ invincibleKey }}){% endif %}
+                <br/>
+                <label for="skipKey">Skip Level</label>
+                <input type="text" name="skipKey" id="skipKey"/>
+                {% if skipKey != None %}({{skipKey}}){% endif %}
+                <br/>
+                <input type="submit" />
+            </form>
+        </main>
+        <footer>
+            &copy; Ben Cahill
+        </footer>
+    </body>
+</html>

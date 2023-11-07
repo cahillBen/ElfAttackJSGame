@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Ben's Game</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+        <script src="{{ url_for('static', filename='game.js') }}" type="module" ></script>
+        <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}"/>
+    </head>
+    <body>
+        
+        <header>
+            <h1>Elf Attack</h1>
+            <nav>
+                <button id="username">Username</button>
+                <button id="rules">Tips</button>
+                <button id="tutorial">Story Mode</button>
+                <button id="game">Endless Mode</button>
+                <button id="scores">Leaderboard</button>
+                <button id="settings"><a href="{{ url_for('settings') }}">Settings</a></button>
+            </nav>
+        </header>
+        <h2 id="title"></h2>
+        <canvas id="canvas" width="512" height="320"></canvas>
+        <p id="underGame"></p>
+        <main>
+
+        </main>
+        <footer>
+            &copy; Ben Cahill
+        </footer>
+    </body>
+</html>
